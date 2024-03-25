@@ -161,10 +161,11 @@ $ docker stats
   >-f : 强制删除；
   >--no-prune : 不移除该镜像的过程镜像，默认移除
   >~~~
-  ~~~sh
-  # 删除镜像tag为latest的且是laladder/self-use仓库的
-  docker rmi laladder/self-use:latest
-  ~~~
+  
+  >~~~sh
+  ># 删除镜像tag为latest的且是laladder/self-use仓库的
+  >docker rmi laladder/self-use:latest
+  >~~~
 #### docker exec 详细参数
 ~~~sh
 -d :分离模式: 在后台运行
