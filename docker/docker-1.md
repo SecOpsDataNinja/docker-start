@@ -3,24 +3,24 @@
 ### 下载docker桌面版
 - 由于我是windows 系统，所以需要下载docker桌面版，以便使用命令行
 - 下载地址：https://www.docker.com/products/docker-desktop/ 下载对应版本
-  ![alt text](image.png)
+  ![alt text](images/image.png)
 - 要想在windows下运行docker,需要开启Hyper-V功能
   控制面板 > 程序 > 启用或关闭Windows功能，打开Hyper-V以及他的子功能
-  ![alt text](image-1.png)
-  ![alt text](image-2.png)
-  ![alt text](image-3.png)
+  ![alt text](images/image-1.png)
+  ![alt text](images/image-2.png)
+  ![alt text](images/image-3.png)
 - 做好以上，则可以开始进行学习入门了
 
 ## 2. docker入门学习
 ### 1. docker的基本概念
 **Docker** 包括三个基本概念
-- 镜像（Image）
+- 镜像（images/image）
 - 容器（Container）
 - 仓库（Repository）
-#### Docker镜像（Image）
+#### Docker镜像（images/image）
   **Docker镜像**是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像 不包含 任何动态数据，其内容在构建之后也不会被改变。
 #### Docker容器
-镜像（```Image```）和容器（```Container```）的关系，就像是面向对象程序设计中的```类```和```实例```一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。
+镜像（```images/image```）和容器（```Container```）的关系，就像是面向对象程序设计中的```类```和```实例```一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。
 
 容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的**命名空间**(opens new window)。因此容器可以拥有自己的 root 文件系统、自己的网络配置、自己的进程空间，和自己的用户**ID**空间。
 
@@ -36,7 +36,7 @@ Docker Registry 公开服务是开放给用户使用、允许用户管理镜像�
 最常使用的 Registry 公开服务是官方的[Docker Hub](https://hub.docker.com/), 国内有[阿里加速器](https://www.aliyun.com/product/acr?source=5176.11533457&userCode=8lx5zmtu)，网易等。
 #### 私人仓库
 Docker官方也提供了私人镜像仓库，以下是简单练习使用后的仓库
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 ### 2. 获取第一个docker镜像
 从docker官方镜像录取镜像
 ~~~
@@ -66,13 +66,13 @@ docker.io/library/ubuntu:18.04
 docker run -it --rm ubuntu:18.04 bash
 ~~~
 提示一下错误，这个错误通常出现在 Windows 上使用 Docker 的情况下。Windows 默认使用的终端为 mintty，而不是标准的 TTY 终端。要解决这个问题，可以在命令前添加 winpty 前缀。
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 即：
 ~~~sh
 winpty docker run -it --rm ubuntu:18.04 bash
 ~~~
 之后执行`cat /etc/os-release`效果如下
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 `docker run`就是运行容器的命令，具体格式我们会在 容器 一节进行详细讲解，我们这里简要的说明一下上面用到的参数。
 
 - `-it`：这是两个参数，一个是 `-i`：交互式操作，一个是 `-t` 终端。我们这里打算进入 `bash` 执行一些命令并查看返回结果，因此我们需要交互式终端。
