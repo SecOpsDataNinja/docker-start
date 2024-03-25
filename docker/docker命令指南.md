@@ -1,5 +1,3 @@
-[TOC]
-
 ## Docker命令大全
 ### docker镜像命令
 ~~~sh
